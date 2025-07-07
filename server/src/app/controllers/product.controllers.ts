@@ -1,4 +1,6 @@
-import { product as Product } from "../model/product.model";
+
+import {  product as Product } from "../model/product.model";
+
 
 // post req
 
@@ -13,7 +15,7 @@ export const createProduct = async (req, res) => {
     });
   } catch (error) {
     console.log(error.message);
-    res.json({
+    res.staus(500).json({
       success: false,
       error: error.message,
       message: "Failed to insert product",
@@ -23,10 +25,32 @@ export const createProduct = async (req, res) => {
 
 // get req
 
+export const getProducts = async (req, res) => {
+  try {
+
+    const allProducts =await  Product.find();
+    if(!allProducts)
+    {
+        return res.status(404).json({
+            success:false,
+            message:"product not found"
+
+        })
+    }
+
+    res.json({
+        success:true,
+        data:allProducts,
+        message:"Product fetch successfully"
+    })
 
 
 
-
-
-
-
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message,
+      message: "Failed to fetch product",
+    });
+  }
+};
