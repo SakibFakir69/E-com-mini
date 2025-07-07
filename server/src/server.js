@@ -1,10 +1,10 @@
 
 
-import app from "./app";
-import mongoose from "mongoose";
+import app from './app.js';
+import mongoose from 'mongoose';
 
-
-const url = process.env.DB_URL;
+const uri = process.env.DB_URI;
+const port = process.env.PORT || 5000;
 
 
 
@@ -12,9 +12,17 @@ const url = process.env.DB_URL;
 const startServer =async  ()=>{
 
     try{
+        if(!uri)
+        {
+            return "not found"
+        }
 
-        await mongoose.connect(url);
+        await mongoose.connect(uri);
         console.log("conected")
+
+        app.listen(port, ()=>{
+            console.log(`server running on this port ${port}`)
+        })
 
 
     }catch(error)
