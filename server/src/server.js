@@ -3,7 +3,7 @@
 import app from './app.js';
 import mongoose from 'mongoose';
 
-const uri = process.env.DB_URI;
+const uri = process.env.DB_URI
 const port = process.env.PORT || 5000;
 
 
