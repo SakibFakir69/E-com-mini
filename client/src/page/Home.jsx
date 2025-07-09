@@ -23,13 +23,23 @@ function Home() {
 
 
   return (
-    <div className='grid md:grid-cols-3 grid-cols-1 gap-6 p-8'>
+    <div className=' p-8'>
 
-        {
+
+      {
+        isLoading ? (<div className='flex justify-center items-center w-full'><span className="loading loading-spinner md:size-24 size-10"></span></div>) : (<div className='grid md:grid-cols-3 grid-cols-1 gap-9'>
+
+          {
             allProducts.map((product, key)=>(
                 <Card _id={product._id} key={key} title={product.title} image={product.image} price={product.price}/>
             ))
         }
+
+        </div>)
+      }
+
+
+        
 
 
 
