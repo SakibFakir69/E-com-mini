@@ -23,12 +23,18 @@ importers:
       react-dom:
         specifier: ^19.1.0
         version: 19.1.0(react@19.1.0)
+      react-rating-stars-component:
+        specifier: ^2.2.0
+        version: 2.2.0
       react-route:
         specifier: ^1.0.3
         version: 1.0.3(react@19.1.0)
       react-router-dom:
         specifier: ^7.6.3
         version: 7.6.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      swiper:
+        specifier: ^11.2.10
+        version: 11.2.10
       tailwindcss:
         specifier: ^4.1.11
         version: 4.1.11
@@ -1165,6 +1171,9 @@ packages:
     peerDependencies:
       react: ^19.1.0
 
+  react-rating-stars-component@2.2.0:
+    resolution: {integrity: sha512-A3lgLxumfFQQicKQmxacZ91fq/zRaVWlCPnVodJmJV6obvod4/yCotetN9WuyBiUfnKsEFDBo/8B85ocwmL7ng==}
+
   react-refresh@0.17.0:
     resolution: {integrity: sha512-z6F7K9bV85EfseRCp2bzrpyQ0Gkw1uLoCel9XBVWPg/TjRj94SkJzUTGfOa4bs7iJvBWtQG0Wq7wnI0syw3EBQ==}
     engines: {node: '>=0.10.0'}
@@ -1233,6 +1242,10 @@ packages:
   supports-color@7.2.0:
     resolution: {integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==}
     engines: {node: '>=8'}
+
+  swiper@11.2.10:
+    resolution: {integrity: sha512-RMeVUUjTQH+6N3ckimK93oxz6Sn5la4aDlgPzB+rBrG/smPdCTicXyhxa+woIpopz+jewEloiEE3lKo1h9w2YQ==}
+    engines: {node: '>= 4.7.0'}
 
   tailwindcss@4.1.11:
     resolution: {integrity: sha512-2E9TBm6MDD/xKYe+dvJZAmg3yxIEDNRc0jwlNyDg/4Fil2QcSLjFKGVff0lAf1jjeaArlG/M75Ey/EYr/OJtBA==}
@@ -2292,6 +2305,8 @@ snapshots:
       react: 19.1.0
       scheduler: 0.26.0
 
+  react-rating-stars-component@2.2.0: {}
+
   react-refresh@0.17.0: {}
 
   react-route@1.0.3(react@19.1.0):
@@ -2364,6 +2379,8 @@ snapshots:
   supports-color@7.2.0:
     dependencies:
       has-flag: 4.0.0
+
+  swiper@11.2.10: {}
 
   tailwindcss@4.1.11: {}
 
