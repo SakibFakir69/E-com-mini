@@ -10,7 +10,7 @@ function useallProducts() {
     const {data, isLoading, isError, refetch,} = useQuery({
         queryKey:['product'],
         queryFn:async()=> {
-            const result =await axios.get('http://localhost:5000/api/products');
+            const result =await axios.get('https://e-com-mini.onrender.com/api/products');
             return result.data;
         }
     })

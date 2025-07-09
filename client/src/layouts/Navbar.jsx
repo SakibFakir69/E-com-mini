@@ -43,7 +43,7 @@ function Navbar() {
   return (
     <div>
       <ToastContainer />
-      <div className="navbar bg-[#FFFFFF] shadow-sm p-4">
+      <div className="navbar bg-[#FFFFFF] shadow-sm border border-stone-300 p-4">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -110,8 +110,8 @@ function Navbar() {
 
           <section className="absolute top-14  h-screen">
             {sidebar && (
-              <aside className="bg-white border border-black rounded md:w-72 w-40 h-2/3 ease-out duration-75 delay-100 right-4  fixed  z-50 overflow-x-scroll">
-                <button className="fixed" onClick={() => handelSideBar(false)}>
+              <aside className=" border border-white bg-stone-100 rounded md:w-72 w-40 h-2/3 ease-out duration-75 delay-100 right-4  fixed  z-50 overflow-x-scroll">
+                <button className="fixed p-2 cursor-pointer hover:text-red-500" onClick={() => handelSideBar(false)}>
                   <img
                     className="size-6"
                     src="https://img.icons8.com/ios/50/cancel.png"
@@ -128,7 +128,7 @@ function Navbar() {
                         key={key}
                         className="flex justify-center items-center gap-y-4"
                       >
-                        <div>
+                        <div className="border border-stone-100 flex flex-col justify-center items-center mt-2">
                           <img
                             src={item.image}
                             alt={item.title}
@@ -136,7 +136,7 @@ function Navbar() {
                           />
                           <p className="md:font-semibold">{item.title}</p>
 
-                          <div className="flex w-full gap-x-2">
+                          <div className="flex justify-center w-full gap-x-2">
                             <button
                               className="cursor-pointer"
                               onClick={() => increaseQuantity(item._id)}
@@ -155,14 +155,14 @@ function Navbar() {
                       </div>
                     ))}
 
-                    <div className="h-10 border p-4">
-                      <p className=""> total price:{totalPrice}</p>
+                    <div className="h-10  text-center p-4">
+                      <p className=""> Total price {totalPrice}</p>
                     </div>
 
                     <div className="flex justify-center items-center py-4">
                       {/* Open the modal using document.getElementById('ID').showModal() method */}
                       <button
-                        className="btn"
+                        className="btn bg-[#6366F1] text-white"
                         onClick={() =>
                           document.getElementById("my_modal_1").showModal()
                         }

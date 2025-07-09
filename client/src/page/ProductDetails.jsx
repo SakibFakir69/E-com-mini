@@ -44,7 +44,7 @@ function ProductDetails() {
     <div className="p-8 bg-[#F9FAFB] w-full">
       <section className="md:flex gap-x-5 w-full justify-center items-center border  shadow rounded  border-white p-5 md:h-[370px] ">
         <div className=" flex flex-col">
-          <img src={image} alt={title} className=" md:h-[280px] " />
+          <img src={image} alt={title} className=" md:h-[250px] h-180px " />
         </div>
         <div className="flex flex-col  gap-y-2">
           <h2 className="md:text-3xl text-xl font-semibold ">{title}</h2>
@@ -71,7 +71,7 @@ function ProductDetails() {
           </p>
 
           <del className="text-">${price}</del>
-          <strong>{discountPrice}</strong>
+          <strong>${discountPrice}</strong>
 
           
 
