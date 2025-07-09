@@ -13,7 +13,7 @@ importers:
         version: 2.8.5
       dotenv:
         specifier: ^17.0.1
-        version: 17.0.1
+        version: 17.2.0
       express:
         specifier: ^5.1.0
         version: 5.1.0
@@ -22,7 +22,7 @@ importers:
         version: 6.17.0
       mongoose:
         specifier: ^8.16.1
-        version: 8.16.1
+        version: 8.16.2
     devDependencies:
       nodemon:
         specifier: ^3.1.10
@@ -121,8 +121,8 @@ packages:
     resolution: {integrity: sha512-g7nH6P6dyDioJogAAGprGpCtVImJhpPk/roCzdb3fIh61/s/nPsfR6onyMwkCAR/OlC3yBC0lESvUoQEAssIrw==}
     engines: {node: '>= 0.8'}
 
-  dotenv@17.0.1:
-    resolution: {integrity: sha512-GLjkduuAL7IMJg/ZnOPm9AnWKJ82mSE2tzXLaJ/6hD6DhwGfZaXG77oB8qbReyiczNxnbxQKyh0OE5mXq0bAHA==}
+  dotenv@17.2.0:
+    resolution: {integrity: sha512-Q4sgBT60gzd0BB0lSyYD3xM4YxrXA9y4uBDof1JNYGzOXrQdQ6yX+7XIAqoFOGQFOTK1D3Hts5OllpxMDZFONQ==}
     engines: {node: '>=12'}
 
   dunder-proto@1.0.1:
@@ -308,8 +308,8 @@ packages:
       socks:
         optional: true
 
-  mongoose@8.16.1:
-    resolution: {integrity: sha512-Q+0TC+KLdY4SYE+u9gk9pdW1tWu/pl0jusyEkMGTgBoAbvwQdfy4f9IM8dmvCwb/blSfp7IfLkob7v76x6ZGpQ==}
+  mongoose@8.16.2:
+    resolution: {integrity: sha512-52T4XPhDgJL4cqooBsOORzYBH3ddMwABMEF/LV7TgvD2DEKZlnYTc2HF9ch1U2lcKjhE4pQ+WuInfLFJbguGcQ==}
     engines: {node: '>=16.20.1'}
 
   mpath@0.9.0:
@@ -596,7 +596,7 @@ snapshots:
 
   depd@2.0.0: {}
 
-  dotenv@17.0.1: {}
+  dotenv@17.2.0: {}
 
   dunder-proto@1.0.1:
     dependencies:
@@ -771,7 +771,7 @@ snapshots:
       bson: 6.10.4
       mongodb-connection-string-url: 3.0.2
 
-  mongoose@8.16.1:
+  mongoose@8.16.2:
     dependencies:
       bson: 6.10.4
       kareem: 2.6.3
