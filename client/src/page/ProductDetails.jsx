@@ -4,6 +4,7 @@ import useallProducts from "../hook/useallProducts";
 import ContextProvider, {
   ContextProviderApi,
 } from "../context/ContextProvider";
+import Rating from "react-rating";
 
 function ProductDetails() {
   const { data, isLoading, isError, refetch } = useallProducts();
@@ -17,7 +18,7 @@ function ProductDetails() {
   const productData = allProducts.find((product) => product._id === id);
   console.log(productData);
 
-  const { title, rating, brand, price, description, image, tags, stock } =
+  const { title, rating, brand, price, description, image, tags, stock,discountPrice } =
     productData;
   // rating use react rating
 
@@ -39,19 +40,25 @@ function ProductDetails() {
     }
   };
 
-
-
   return (
     <div className="p-8 bg-[#F9FAFB] w-full">
-
-      <section className="md:flex gap-x-5 w-full justify-center items-center border  shadow rounded  border-white p-5 ">
-        <div className="border ">
-          <img src={image} alt={title} className="border" />
+      <section className="md:flex gap-x-5 w-full justify-center items-center border  shadow rounded  border-white p-5 md:h-[370px] ">
+        <div className=" flex flex-col">
+          <img src={image} alt={title} className=" md:h-[280px] " />
         </div>
         <div className="flex flex-col  gap-y-2">
           <h2 className="md:text-3xl text-xl font-semibold ">{title}</h2>
           <p>{description}</p>
-          <b>{rating}</b>
+
+         <div className="flex ga-x-2  justify-start">
+           <b>{rating}</b>
+          <Rating
+            readonly
+            initialRating={rating}
+            emptySymbol={<span className="text-gray-400 text-xl">☆</span>}
+            fullSymbol={<span className="text-yellow-400 text-xl">★</span>}
+          />
+         </div>
 
           <p>
             {" "}
@@ -60,14 +67,18 @@ function ProductDetails() {
           </p>
           <p>
             {" "}
-            <b> stock:{stock}</b>{" "}
+            <p> stock:{stock}</p>{" "}
           </p>
-          <b className="text-">${price}</b>
+
+          <del className="text-">${price}</del>
+          <strong>{discountPrice}</strong>
+
+          
 
           <div>
             <button
               onClick={() => handelCart(productData)}
-              className="px-7 cursor-pointer py-2 bg-[#6366F1] text-white z-20 font-semibold rounded"
+              className="px-5 cursor-pointer py-1 bg-[#6366F1] text-white z-20 font-semibold rounded"
             >
               Add to Cart
             </button>
