@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import useallProducts from "../hook/useallProducts";
+import ContextProvider, { ContextProviderApi } from "../context/ContextProvider";
+
+
 
 function ProductDetails() {
   const { data, isLoading, isError, refetch } = useallProducts();
+
+  const {cartItem, setCartItem} = useContext(ContextProviderApi)
 
   const { id } = useParams();
   const allProducts = data?.data || [];
@@ -15,6 +20,24 @@ function ProductDetails() {
   const { title, rating, brand, price, description, image, tags, stock } =
     productData;
   // rating use react rating
+
+
+
+  // handel add to cart 
+
+  const handelCart = (product)=>{
+
+    if(!product){
+      alert("not add to cart");
+      return;
+    }
+
+    setCartItem([...cartItem, product]);
+    console.log("product add to cart",product)
+
+
+
+  }
 
   return (
     <div className="p-8 bg-[#F9FAFB] w-full">
@@ -34,7 +57,7 @@ function ProductDetails() {
           <b className="text-">${price}</b>
 
           <div>
-            <button className="px-10 py-2 bg-blue-600 text-white font-semibold rounded">Add to Cart</button>
+            <button onClick={()=> handelCart(productData)} className="px-10 py-2 bg-blue-600 text-white font-semibold rounded">Add to Cart</button>
             {/* send data to cart, use arr [ {} , {} , {} useContext,reducce for price have -/+ button */}
           </div>
         </div>

@@ -1,32 +1,26 @@
-
-
-
-
-import React, { createContext, useState } from 'react'
+import React, { createContext, useState } from "react";
+import { Children } from "react";
 
 export const ContextProviderApi = createContext();
 
+function ContextProvider({ children }) {
+  const [cartItem, setCartItem] = useState([]);
+  // cart store here
 
-function ContextProvider({child}) {
-    const [ cart , setCart ] = useState([]);
-    // cart store here
+  const info = {
+    cartItem,
+    setCartItem,
+  };
 
-    const info={
-        cart , setCart
-    }
-
+  console.log(cartItem);
 
   return (
     <div>
-
-        <ContextProviderApi.Provider value={info}>
-
-        </ContextProviderApi.Provider>
-
-
-
+      <ContextProviderApi.Provider value={info}>
+        {children}
+      </ContextProviderApi.Provider>
     </div>
-  )
+  );
 }
 
-export default ContextProvider
+export default ContextProvider;
